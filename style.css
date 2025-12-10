@@ -5,163 +5,165 @@
   box-sizing: border-box;
 }
 
-/* ====== FUENTE Y COLORES ====== */
+/* ====== FUENTE Y BASE ====== */
 body {
-  font-family: 'Orbitron', sans-serif; /* Fuente futurista (Google Fonts) */
-  background: radial-gradient(circle at top, #0f0f1a, #000000);
-  color: #e0e0e0;
+  font-family: 'Inter', 'Orbitron', sans-serif;
+  background: #0d0d0f;
+  color: #e5e5e5;
   line-height: 1.6;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
 }
 
 /* ====== CABECERA ====== */
 header {
-  background: linear-gradient(90deg, #0ff, #00f, #f0f);
-  padding: 1rem;
-  text-align: center;
-  border-bottom: 2px solid #0ff;
-  box-shadow: 0 0 20px #0ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #222;
 }
 
 header h1 {
-  font-size: 2rem;
-  color: #fff;
-  text-shadow: 0 0 10px #0ff;
+  font-size: 1.8rem;
+  color: #00ffc8;
+  font-weight: 700;
 }
 
 /* ====== NAVEGACIÓN ====== */
-nav {
-  margin-top: 0.5rem;
-}
-
 nav a {
-  color: #0ff;
+  color: #aaa;
   text-decoration: none;
   margin: 0 1rem;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  color: #00ffc8;
 }
 
 /* ====== SECCIONES Y ARTÍCULOS ====== */
 main {
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 section {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 2rem;
-  justify-content: center;
 }
 
 article {
-  background: rgba(20, 20, 40, 0.8);
-  border: 1px solid #0ff;
-  border-radius: 10px;
-  padding: 1.5rem;
-  width: 300px;
-  text-align: center;
-  box-shadow: 0 0 15px #0ff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #141418;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: transform 0.2s ease;
 }
 
 article:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #0ff, 0 0 40px #0ff;
+  transform: translateY(-5px);
 }
 
 article h2 {
-  color: #0ff;
+  color: #00ffc8;
   margin-bottom: 1rem;
 }
 
 article p {
   margin-bottom: 1rem;
+  color: #ccc;
 }
 
 article img {
-  max-width: 100%;
-  border-radius: 8px;
-  border: 2px solid #0ff;
+  width: 100%;
+  border-radius: 6px;
   margin-bottom: 1rem;
 }
 
-/* ====== BOTONES Y ENLACES ====== */
-a, button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border: 2px solid #0ff;
-  border-radius: 5px;
-  background: transparent;
-  color: #0ff;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* ====== LISTADO ====== */
+ul.project-list {
+  list-style: none;
+  padding: 0;
 }
 
-a:hover, button:hover {
-  background: #0ff;
-  color: #000;
-  box-shadow: 0 0 15px #0ff;
+ul.project-list li {
+  background: #141418;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #222;
 }
 
-/* ====== FORMULARIOS ====== */
+ul.project-list li a {
+  color: #00ffc8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ====== FORMULARIO ====== */
 form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 400px;
+  max-width: 500px;
   margin: auto;
-  background: rgba(20, 20, 40, 0.8);
+  background: #141418;
   padding: 2rem;
-  border-radius: 10px;
-  border: 1px solid #0ff;
-  box-shadow: 0 0 20px #0ff;
+  border-radius: 8px;
+  border: 1px solid #222;
 }
 
 label {
-  font-weight: bold;
-  color: #0ff;
+  font-weight: 600;
+  color: #00ffc8;
 }
 
 input, textarea {
-  padding: 0.5rem;
-  border: 2px solid #0ff;
-  border-radius: 5px;
-  background: #111;
-  color: #fff;
+  padding: 0.8rem;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #0d0d0f;
+  color: #e5e5e5;
 }
 
 input:focus, textarea:focus {
   outline: none;
-  border-color: #f0f;
-  box-shadow: 0 0 10px #f0f;
+  border-color: #00ffc8;
+}
+
+button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background: #00ffc8;
+  color: #0d0d0f;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #00d4a3;
 }
 
 /* ====== PIE DE PÁGINA ====== */
 footer {
-  background: #111;
   text-align: center;
   padding: 1rem;
-  border-top: 2px solid #0ff;
-  box-shadow: 0 -5px 15px #0ff;
+  border-top: 1px solid #222;
+  margin-top: 2rem;
+  color: #777;
 }
 
 footer p {
-  color: #888;
+  font-size: 0.9rem;
 }
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
   section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  article {
-    width: 90%;
+    grid-template-columns: 1fr;
   }
 }
