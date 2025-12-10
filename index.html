@@ -1,211 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Abel — Página personal</title>
-  <meta name="description" content="Página personal de Abel: networking Cisco, Python, documentación técnica y aprendizaje comprimido." />
-  <style>
-    :root{
-      --bg:#0f172a;        /* slate-900 */
-      --card:#111827;      /* gray-900 */
-      --muted:#94a3b8;     /* slate-400 */
-      --text:#e2e8f0;      /* slate-200 */
-      --accent:#22d3ee;    /* cyan-400 */
-      --accent-2:#a78bfa;  /* violet-400 */
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    header{max-width:980px;margin:0 auto;padding:48px 20px 8px}
-    nav{display:flex;gap:18px;flex-wrap:wrap}
-    nav a{font-weight:600}
-    .hero{max-width:980px;margin:0 auto;padding:40px 20px 32px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:24px}
-    @media (max-width:840px){.hero{grid-template-columns:1fr}}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px}
-    h1{font-size:2.2rem;margin:0 0 8px}
-    h2{font-size:1.4rem;margin:0 0 12px}
-    p{margin:0 0 12px;color:var(--muted);line-height:1.6}
-    .tag{display:inline-block;border:1px solid rgba(255,255,255,0.15);padding:6px 10px;border-radius:999px;margin:6px 6px 0 0;color:#cbd5e1;font-size:.9rem}
-    .grid{max-width:980px;margin:0 auto;padding:8px 20px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    @media (max-width:980px){.grid{grid-template-columns:1fr 1fr}}
-    @media (max-width:640px){.grid{grid-template-columns:1fr}}
-    .list{display:grid;gap:10px;margin-top:6px}
-    .list li{list-style:none;background:var(--card);border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:12px}
-    .label{font-weight:700;color:#cbd5e1}
-    .small{font-size:.95rem;color:var(--muted)}
-    footer{max-width:980px;margin:0 auto;padding:24px 20px 60px;color:var(--muted)}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.1)}
-    .accent{color:var(--accent)}
-    .accent2{color:var(--accent-2)}
-    .avatar{
-      width:100%;min-height:220px;border-radius:14px;border:1px dashed rgba(255,255,255,0.18);
-      display:grid;place-items:center;color:#cbd5e1;background:rgba(255,255,255,0.03)
-    }
-    .section-title{display:flex;align-items:center;gap:10px}
-    .section-title span{font-size:1.2rem}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfoli - Alumne</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header aria-label="Navegación principal">
+  <header>
+    <h1>Portfoli Personal</h1>
     <nav>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#exam-prep">Exam prep</a>
-      <a href="#contacto">Contacto</a>
+      <a href="index.html">Inici</a>
+      <a href="llistat.html">Projectes</a>
+      <a href="contacte.html">Contacte</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="card">
-      <h1>Abel</h1>
-      <p class="small">Mollet del Vallès · Barcelona · Multilingüe (ES/CA/EN)</p>
-      <p>Administrador de redes y escritor de hojas ultra-comprimidas. Me gusta resolver problemas con claridad defendible: Cisco, Python y documentación precisa. Aprendo rápido, verifico mejor.</p>
-      <div style="margin-top:12px">
-        <span class="tag">Cisco · VLANs · Trunking</span>
-        <span class="tag">Router-on-a-stick</span>
-        <span class="tag">DHCP · Subnetting</span>
-        <span class="tag">Python · JSON/XML</span>
-        <span class="tag">Documentación metódica</span>
-      </div>
-      <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
-        <a class="pill" href="#contacto"><span>✉️</span><span>Hablemos</span></a>
-        <a class="pill" href="#exam-prep"><span>📎</span><span>Mis hojas</span></a>
-      </div>
-    </div>
-    <div class="avatar" aria-label="Foto o logo de Abel">
-      <div>
-        <div class="small">Coloca aquí tu foto o logo</div>
-        <div class="small">img/abel.jpg · 600×600</div>
-      </div>
-    </div>
-  </section>
+  <main>
+    <section>
+      <article>
+        <h2>Projecte 1</h2>
+        <p>Descripció breu del projecte.</p>
+        <img src="img/proj1.png" alt="Projecte 1">
+        <a href="PW1.html">Veure detall</a>
+      </article>
 
-  <section id="sobre-mi" class="grid" aria-label="Sobre mí">
-    <article class="card">
-      <div class="section-title"><span>🧭</span><h2>En qué creo</h2></div>
-      <p>La simplicidad no es reducir, es destilar. Busco soluciones que puedan defenderse bajo presión, con verificación clara y pasos mínimos.</p>
-      <p class="small">Mantra: “Primero la base, luego los extras. Siempre comprobación.”</p>
-    </article>
-    <article class="card">
-      <div class="section-title"><span>🛠️</span><h2>Cómo trabajo</h2></div>
-      <ul class="list">
-        <li><span class="label">Checklist-driven:</span> diseño listas con comandos clave y resultados esperados.</li>
-        <li><span class="label">Visual-first:</span> diagramas y tablas rápidas para recordar y defender.</li>
-        <li><span class="label">Verify-every-step:</span> comandos de validación integrados.</li>
-      </ul>
-    </article>
-    <article class="card">
-      <div class="section-title"><span>🌍</span><h2>Contexto</h2></div>
-      <p>Barcelona me enseñó a adaptar lenguaje y registro. Cambio entre español, catalán y inglés técnico según el entorno.</p>
-      <p class="small">Clientes, exámenes, y equipos internacionales: claridad por encima de todo.</p>
-    </article>
-  </section>
-
-  <section id="habilidades" class="grid" aria-label="Habilidades">
-    <article class="card">
-      <div class="section-title"><span>🌐</span><h2>Networking Cisco</h2></div>
-      <ul class="list">
-        <li><span class="label">VLANs & Trunking:</span> creación, etiquetado y aislamiento controlado.</li>
-        <li><span class="label">Router-on-a-stick:</span> subinterfaces, encapsulación, routing entre VLANs.</li>
-        <li><span class="label">DHCP & Subnetting:</span> pools, reservas y cálculo rápido /16–/31.</li>
-        <li><span class="label">Verificación:</span> show, debug, y trazabilidad de cambios.</li>
-      </ul>
-    </article>
-    <article class="card">
-      <div class="section-title"><span>🐍</span><h2>Python</h2></div>
-      <ul class="list">
-        <li><span class="label">Automatización:</span> scripts para convertir JSON/XML y tareas repetitivas.</li>
-        <li><span class="label">CLI limpia:</span> utilidades con argumentos y salida defendible.</li>
-        <li><span class="label">Pruebas:</span> casos mínimos y asserts claros.</li>
-      </ul>
-    </article>
-    <article class="card">
-      <div class="section-title"><span>📝</span><h2>Documentación</h2></div>
-      <ul class="list">
-        <li><span class="label">Hojas comprimidas:</span> comandos y flujos de verificación.</li>
-        <li><span class="label">Diagramas:</span> mapas relacionales y tablas de referencia.</li>
-        <li><span class="label">Justificación:</span> cada paso con motivo y evidencia.</li>
-      </ul>
-    </article>
-  </section>
-
-  <section id="proyectos" class="grid" aria-label="Proyectos">
-    <article class="card">
-      <div class="section-title"><span>🧩</span><h2>Switching rápido</h2></div>
-      <p>Plantillas para VLANs, trunks y router-on-a-stick con verificación integrada para laboratorios y producción.</p>
-      <p class="small">Resultado: despliegues consistentes y auditables.</p>
-    </article>
-    <article class="card">
-      <div class="section-title"><span>🔁</span><h2>Conversor JSON/XML</h2></div>
-      <p>Script en Python que normaliza estructuras y valida esquemas, con logs claros y pruebas mínimas.</p>
-      <p class="small">Resultado: menos fricción entre sistemas.</p>
-    </article>
-    <article class="card">
-      <div class="section-title"><span>📘</span><h2>Guías de examen</h2></div>
-      <p>Hojas de comandos y checklists “lista para foto”. Cubre desde subnetting hasta comandos show/debug esenciales.</p>
-      <p class="small">Resultado: recall rápido y defensa en orales.</p>
-    </article>
-  </section>
-
-  <section id="exam-prep" class="grid" aria-label="Exam prep">
-    <article class="card">
-      <div class="section-title"><span class="accent">📎</span><h2>Hojas clave</h2></div>
-      <ul class="list">
-        <li><span class="label">Switch básico:</span> VLANs, trunks, native VLAN, port-security.</li>
-        <li><span class="label">Router-on-a-stick:</span> subinterfaces, encapsulación dot1q, rutas.</li>
-        <li><span class="label">DHCP:</span> pools, exclusiones, reservas, verificación.</li>
-        <li><span class="label">Subnetting:</span> máscaras /16–/31, hosts y usos típicos.</li>
-      </ul>
-    </article>
-    <article class="card">
-      <div class="section-title"><span class="accent2">✅</span><h2>Verificación rápida</h2></div>
-      <ul class="list">
-        <li><span class="label">show:</span> vlan, interfaces trunk, ip interface brief, running-config.</li>
-        <li><span class="label">ping/traceroute:</span> conectividad y rutas efectivas.</li>
-        <li><span class="label">debug selectivo:</span> solo en laboratorio, con salida registrada.</li>
-      </ul>
-    </article>
-    <article class="card">
-      <div class="section-title"><span>🧠</span><h2>Estrategia</h2></div>
-      <ul class="list">
-        <li><span class="label">Base primero:</span> configura mínimo funcional.</li>
-        <li><span class="label">Prueba:</span> valida cada segmento.</li>
-        <li><span class="label">Extras:</span> seguridad, QoS y documentación final.</li>
-      </ul>
-    </article>
-  </section>
-
-  <section id="contacto" class="grid" aria-label="Contacto">
-    <article class="card">
-      <div class="section-title"><span>✉️</span><h2>Contacto</h2></div>
-      <p>¿Proyecto, laboratorio o material de estudio? Escríbeme.</p>
-      <ul class="list">
-        <li><span class="label">Email:</span> <a href="mailto:abel@example.com">abel@example.com</a></li>
-        <li><span class="label">LinkedIn:</span> <a href="#" aria-label="Perfil de LinkedIn">linkedin.com/in/abel</a></li>
-        <li><span class="label">GitHub:</span> <a href="#" aria-label="Perfil de GitHub">github.com/abel</a></li>
-      </ul>
-      <p class="small">Disponible en español, catalán e inglés técnico.</p>
-    </article>
-    <article class="card">
-      <div class="section-title"><span>📍</span><h2>Ubicación</h2></div>
-      <p>Mollet del Vallès, Barcelona. Trabajo en remoto e híbrido.</p>
-      <p class="small">Zona CET (UTC+1).</p>
-    </article>
-    <article class="card">
-      <div class="section-title"><span>🗂️</span><h2>Descargables</h2></div>
-      <ul class="list">
-        <li><span class="label">CV PDF:</span> <a href="#" download>cv-abel.pdf</a></li>
-        <li><span class="label">Hojas Cisco:</span> <a href="#" download>cisco-cheatsheets.zip</a></li>
-        <li><span class="label">Scripts Python:</span> <a href="#" download>utils-python.zip</a></li>
-      </ul>
-    </article>
-  </section>
+      <article>
+        <h2>Projecte 2</h2>
+        <p>Descripció breu del projecte.</p>
+        <img src="img/proj2.png" alt="Projecte 2">
+        <a href="PW2.html">Veure detall</a>
+      </article>
+    </section>
+  </main>
 
   <footer>
-    <p>© <span id="y"></span> Abel — claridad defendible, siempre.</p>
-    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+    <p>&copy; 2025 Alumne - Xarxes socials</p>
   </footer>
 </body>
+</html>
