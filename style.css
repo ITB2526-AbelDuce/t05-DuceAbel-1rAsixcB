@@ -1,0 +1,167 @@
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ====== FUENTE Y COLORES ====== */
+body {
+  font-family: 'Orbitron', sans-serif; /* Fuente futurista (Google Fonts) */
+  background: radial-gradient(circle at top, #0f0f1a, #000000);
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* ====== CABECERA ====== */
+header {
+  background: linear-gradient(90deg, #0ff, #00f, #f0f);
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #0ff;
+  box-shadow: 0 0 20px #0ff;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 0 10px #0ff;
+}
+
+/* ====== NAVEGACIÓN ====== */
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: #0ff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+/* ====== SECCIONES Y ARTÍCULOS ====== */
+main {
+  padding: 2rem;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+article {
+  background: rgba(20, 20, 40, 0.8);
+  border: 1px solid #0ff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 15px #0ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #0ff, 0 0 40px #0ff;
+}
+
+article h2 {
+  color: #0ff;
+  margin-bottom: 1rem;
+}
+
+article p {
+  margin-bottom: 1rem;
+}
+
+article img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 2px solid #0ff;
+  margin-bottom: 1rem;
+}
+
+/* ====== BOTONES Y ENLACES ====== */
+a, button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid #0ff;
+  border-radius: 5px;
+  background: transparent;
+  color: #0ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+a:hover, button:hover {
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 15px #0ff;
+}
+
+/* ====== FORMULARIOS ====== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: auto;
+  background: rgba(20, 20, 40, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #0ff;
+  box-shadow: 0 0 20px #0ff;
+}
+
+label {
+  font-weight: bold;
+  color: #0ff;
+}
+
+input, textarea {
+  padding: 0.5rem;
+  border: 2px solid #0ff;
+  border-radius: 5px;
+  background: #111;
+  color: #fff;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #f0f;
+  box-shadow: 0 0 10px #f0f;
+}
+
+/* ====== PIE DE PÁGINA ====== */
+footer {
+  background: #111;
+  text-align: center;
+  padding: 1rem;
+  border-top: 2px solid #0ff;
+  box-shadow: 0 -5px 15px #0ff;
+}
+
+footer p {
+  color: #888;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  article {
+    width: 90%;
+  }
+}
