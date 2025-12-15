@@ -51,7 +51,7 @@ main {
 
 section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* más flexible */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
@@ -113,9 +113,9 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  max-width: 800px; /* Más ancho */
+  max-width: 800px;
   margin: 2rem auto;
-  background: rgba(255, 255, 255, 0.85); /* efecto glass */
+  background: rgba(255, 255, 255, 0.85);
   padding: 2.5rem;
   border-radius: 15px;
   border: 3px solid transparent;
@@ -124,7 +124,6 @@ form {
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* Decoración: borde degradado */
 form::before {
   content: "";
   position: absolute;
@@ -138,7 +137,6 @@ form::before {
   pointer-events: none;
 }
 
-/* Encabezado dentro del formulario */
 form h2 {
   text-align: center;
   color: #0077ff;
@@ -147,13 +145,11 @@ form h2 {
   font-weight: 700;
 }
 
-/* Etiquetas */
 label {
   font-weight: 600;
   color: #0077ff;
 }
 
-/* Inputs y textarea */
 input, textarea {
   padding: 1rem;
   border: 1px solid #ccc;
@@ -170,23 +166,12 @@ input:focus, textarea:focus {
   box-shadow: 0 0 10px rgba(0,119,255,0.3);
 }
 
-/* Botón */
-button {
-  padding: 1rem;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #0077ff, #00ffc8);
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
 button:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0,119,255,0.4);
-} /* ← faltaba este cierre */
+}
 
+/* ====== PIE DE PÁGINA ====== */
 footer {
   text-align: center;
   padding: 1rem;
@@ -206,36 +191,31 @@ footer p {
   }
 }
 
-/* ====== JAVA ====== */
-#btnTop {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 15px;
-  background: #0077ff;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
-#toggleTheme {
+/* ====== BARRA DESLIZABLE PARA CAMBIAR TEMA ====== */
+#themeSlider {
   position: fixed;
   top: 20px;
   right: 20px;
-  padding: 8px 12px;
-  background: #00ffc8;
-  border: none;
-  border-radius: 8px;
+  width: 100px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 10px;
   cursor: pointer;
-  font-weight: bold;
+  z-index: 1000;
 }
 
-.dark-mode {
-  background: #222;
-  color: #eee;
+#sliderHandle {
+  width: 20px;
+  height: 20px;
+  background: #666;
+  border-radius: 50%;
+  position: relative;
+  left: 0;
+  transition: left 0.2s ease, background 0.2s ease;
+}
+
+#sliderHandle:hover {
+  background: #444;
 }
 
 /* ====== MODO OSCURO ====== */
@@ -249,7 +229,7 @@ footer p {
 }
 
 .dark-mode header h1 {
-  color: #00ffc8; /* título más visible */
+  color: #00ffc8;
 }
 
 .dark-mode nav a {
@@ -286,3 +266,23 @@ footer p {
   border-top: 2px solid #333;
   color: #aaa;
 }
+
+.dark-mode #themeSlider {
+  background: #444;
+}
+
+.dark-mode #sliderHandle {
+  background: #00ffc8;
+}
+
+/* ====== FONDO DE PARTÍCULAS ====== */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* detrás del contenido */
+  background: transparent;
+}
+
