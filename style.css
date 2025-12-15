@@ -51,7 +51,7 @@ main {
 
 section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* más flexible */
   gap: 2rem;
 }
 
@@ -185,9 +185,8 @@ button {
 button:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0,119,255,0.4);
+} /* ← faltaba este cierre */
 
-
-/* ====== PIE DE PÁGINA ====== */
 footer {
   text-align: center;
   padding: 1rem;
@@ -205,4 +204,85 @@ footer p {
   section {
     grid-template-columns: 1fr;
   }
+}
+
+/* ====== JAVA ====== */
+#btnTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+#toggleTheme {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  background: #00ffc8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dark-mode {
+  background: #222;
+  color: #eee;
+}
+
+/* ====== MODO OSCURO ====== */
+.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode header {
+  border-bottom: 2px solid #333;
+}
+
+.dark-mode header h1 {
+  color: #00ffc8; /* título más visible */
+}
+
+.dark-mode nav a {
+  color: #e0e0e0;
+}
+
+.dark-mode nav a:hover {
+  color: #00ffc8;
+}
+
+.dark-mode article {
+  background: #1e1e1e;
+  border: 1px solid #333;
+}
+
+.dark-mode article h2 {
+  color: #00ffc8;
+}
+
+.dark-mode article p {
+  color: #ccc;
+}
+
+.dark-mode ul.project-list li {
+  background: #1e1e1e;
+  border: 1px solid #333;
+}
+
+.dark-mode ul.project-list li a {
+  color: #00ffc8;
+}
+
+.dark-mode footer {
+  border-top: 2px solid #333;
+  color: #aaa;
 }
