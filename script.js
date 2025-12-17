@@ -275,4 +275,91 @@ window.addEventListener("resize", () => {
   });
 })();
 
+/* ====== CONTADOR DE TIEMPO EN PÁGINA (ENCAPSULADO) ====== */
+(function () {
+  const timerEl = document.querySelector("#pageTimer .pt-time");
+  if (!timerEl) return;
+
+  let elapsedMs = 0;
+  let ticking = false;
+  let lastTick = 0;
+  let rafId = null;
+
+  function format(ms) {
+    const totalSeconds = Math.floor(ms / 1000);
+    const h = Math.floor(totalSeconds / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = totalSeconds % 60;
+    return h > 0
+      ? `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`
+      : `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+  }
+
+  function tick(now) {
+    if (!ticking) return;
+    if (!lastTick) lastTick = now;
+    const delta = now - lastTick;
+    lastTick = now;
+    elapsedMs += delta;
+    timerEl.textContent = format(elapsedMs);
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function resume() {
+    if (ticking) return;
+    ticking = true;
+    lastTick = 0;
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function pause() {
+    ticking = false;
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = null;
+  }
+
+  // Iniciar y pausar según visibilidad
+  resume();
+  document.addEventListener("visibilitychange", () => document.hidden ? pause() : resume());
+  window.addEventListener("blur", pause);
+  window.addEventListener("focus", resume);
+
+  // Limpieza al salir
+  window.addEventListener("beforeunload", pause);
+})();
+
+/* Mantener tiempo si navegas dentro del sitio */
+(function () {
+  const key = "pageTimerMs";
+  const saved = sessionStorage.getItem(key);
+  const timerSpan = document.querySelector("#pageTimer .pt-time");
+  if (!timerSpan) return;
+
+  let baseMs = saved ? parseInt(saved) : 0;
+  let start = performance.now();
+
+  function update() {
+    const elapsed = baseMs + (performance.now() - start);
+    const totalSeconds = Math.floor(elapsed / 1000);
+    const h = Math.floor(totalSeconds / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = totalSeconds % 60;
+    timerSpan.textContent = h > 0
+      ? `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`
+      : `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+    requestAnimationFrame(update);
+  }
+  update();
+
+  window.addEventListener("beforeunload", () => {
+    const current = baseMs + (performance.now() - start);
+    sessionStorage.setItem(key, String(current));
+  });
+})();
+
+
+
+
+
+
 

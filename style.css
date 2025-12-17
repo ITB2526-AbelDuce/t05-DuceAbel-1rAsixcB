@@ -286,3 +286,32 @@ footer p {
   background: transparent;
 }
 
+/* ====== CONTADOR DE TIEMPO ====== */
+#pageTimer {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto;
+  font-size: 0.9rem;
+  color: #fff;
+  background: rgba(0,0,0,0.25);       /* transparente y discreto */
+  backdrop-filter: blur(6px);          /* glass suave */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  z-index: 2000;
+  pointer-events: none;                /* no bloquea clics bajo el timer */
+}
+
+.dark-mode #pageTimer {
+  color: #e6e6e6;
+  background: rgba(255,255,255,0.16);  /* transparencia en dark mode */
+}
+
+.pt-time {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.4px;
+}
+
+
