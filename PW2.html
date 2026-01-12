@@ -2,33 +2,58 @@
 <html lang="ca">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detall Projecte 2</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <header class="header">
     <h1>Detall Projecte 2</h1>
-    <nav>
+    <nav class="nav">
       <a href="index.html">Inici</a>
       <a href="llistat.html">Projectes</a>
       <a href="contacte.html">Contacte</a>
     </nav>
   </header>
 
-  <main>
-    <section>
-      <article>
+  <main class="container">
+    <section class="project-detail">
+
+      <article class="detail-block">
         <h2>Introducció</h2>
         <p>Presentació del projecte i objectius generals.</p>
         <img src="img/proj2.png" alt="Projecte 2 introducció">
       </article>
 
-      <article>
+      <article class="detail-block">
         <h2>Funcionalitats</h2>
         <p>Detall de les característiques principals de l’aplicació.</p>
         <img src="img/func2.png" alt="Funcionalitats del projecte">
       </article>
 
-      <article>
+      <article class="detail-block">
         <h2>Resultats</h2>
-        <p>Impacte del projecte, usuaris beneficiats
+        <p>Impacte del projecte, usuaris beneficiats i millores aconseguides.</p>
+        <img src="img/result2.png" alt="Resultats del projecte">
+      </article>
+
+      <article class="detail-block">
+        <h2>Conclusions</h2>
+        <p>Reflexions finals, aprenentatges i línies de treball futures.</p>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Alumne</p>
+  </footer>
+
+  <div id="pageTimer" aria-live="polite" aria-label="Tiempo en la página">
+    <span class="pt-icon">⏱️</span><span class="pt-time">00:00</span>
+  </div>
+
+  <canvas id="particles"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
